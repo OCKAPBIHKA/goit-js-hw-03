@@ -1,7 +1,14 @@
 'use strict';
 function filterArray(numbers, value) {
-  const nweFilterArray = [];
-  const doMassiv = numbers.indexOf(value);
-
-  if (doMassiv === value) return nweFilterArray.push(index);
+  let nweFilterArray = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > value) nweFilterArray.push(numbers[i]);
+  }
+  return nweFilterArray;
 }
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
